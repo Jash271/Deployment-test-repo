@@ -12,9 +12,9 @@ CORS(app)
 
 @app.route('/')
 def index():
-    return "YouGlance API"
+    return "YouTube Extension API"
 
-@app.route("/youglance/get_unique_entities",methods = ['POST'])
+@app.route("/youtube/get_unique_entities",methods = ['POST'])
 def get_unique_entities():
     data = json.loads(request.data)
     video_id = data['video_id']
@@ -28,7 +28,7 @@ def get_unique_entities():
 
 
 """
-@app.get("/youglance/wild_card")
+@app.get("/youtube/wild_card")
 def wild_card_search(item:Item,status_code=status.HTTP_200_OK):
     print(item.query)
     df=pd.DataFrame(item.df)
@@ -40,7 +40,7 @@ def wild_card_search(item:Item,status_code=status.HTTP_200_OK):
 """
 
 
-@app.route("/youglance/wild_card",methods = ['POST'])
+@app.route("/youtube/wild_card",methods = ['POST'])
 def wild_card():
     data = json.loads(request.data)
     video_id = data['video_id']
@@ -53,7 +53,7 @@ def wild_card():
     }
     
 
-@app.route("/youglance/search_by_ents",methods = ['POST'])
+@app.route("/youtube/search_by_ents",methods = ['POST'])
 def search_by_ents():
     data = json.loads(request.data)
     video_id = data['video_id']
@@ -70,7 +70,7 @@ def search_by_ents():
 
     
 
-@app.route("/youglance/sentiment",methods = ['POST'])
+@app.route("/youtube/sentiment",methods = ['POST'])
 def get_sentiment():
     data = json.loads(request.data)
     video_id = data['video_id']
